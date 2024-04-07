@@ -161,16 +161,10 @@ const datumPremiery = dayjs(film.premiera)
 document.getElementById('premiera').textContent = datumPremiery.format('D. M. YYYY')
 
 let slovo = ["den", "dny", "dní"]
-
-function posledniCislo(number) {
-	return +number.toString().slice(-1)
-}
-
 function sklonovani(pocet) {
-	const cislo = posledniCislo(pocet)
-    if (cislo == 1) return slovo[0]
-    if (cislo < 5 && cislo > 0) return slovo[1]
-    return slovo[2]
+    if (pocet == 1) return slovo[0];
+    if (pocet < 5 && pocet > 0) return slovo[1];
+    return slovo[2];
 }
 
 const doPremiery = datumPremiery.diff(dayjs(), 'days')
